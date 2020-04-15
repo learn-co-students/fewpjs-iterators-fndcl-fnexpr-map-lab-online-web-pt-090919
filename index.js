@@ -1,3 +1,12 @@
+function toTitleCase(str) {
+  return str.replace(
+    /([^\W_]+[^\s-]*) */g,
+      function(txt) {
+          return txt.charAt(0).toUpperCase() + txt.substr(1);
+      }
+  );
+};
+
 const tutorials = [
   'what does the this keyword mean?',
   'What is the Contutorialuctor OO pattern?',
@@ -12,5 +21,5 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  return tutorials.map(x => toTitleCase(x))
 }
